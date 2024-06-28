@@ -1,0 +1,36 @@
+<div class="row w-100 mt-5  d-flex justify-content-center align-items-center">
+  <div class="col-md-1"></div>
+  <div class="col-md-6 d-flex justify-content-center align-items-center">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNOqUJX3KE1kns7yPtIn-YqGqeBYdi0nuH7g&s" alt="">
+  </div>
+  <div class="col-md-4 p-4 d-flex justify-content-center align-items-center ">
+
+    <form (ngSubmit)="login()"           class="shadow p-4 rounded w-100" style="background-image: linear-gradient(to bottom,rgb(19, 34, 36),white);">
+      <h3 class="text-center mb-4 text-light">Login form</h3>
+      <div class="mb-3">
+        
+
+        
+          <!-- for login checking--first ngmodel and hastag login herer mailId name same as that of componet ts mentioned  -->
+
+        <input type="text" #loginEmail="ngModel" [(ngModel)]="mailId" name="mail"  placeholder="Email ID" class="form-control" 
+        required email>
+        <span *ngIf="loginEmail.invalid && loginEmail.touched"   class="text-danger">**Invalid input</span>
+      </div>
+      <div class="mb-3">
+        <input type="password" #loginPswd="ngModel" [(ngModel)]="pswd" name="pswd" placeholder="Password"  class="form-control"
+              
+        required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{4,}$">
+
+        <span *ngIf="loginPswd.invalid && loginPswd.touched"  class="text-danger">**Invalid input</span>
+      </div>
+
+      <div class="mb-3">
+        <button [disabled]="loginEmail.invalid && loginPswd.invalid"  type="submit"  class="btn w-100 text-light" style="background-color: rgb(19, 34, 36);" 
+          >Login</button>
+      </div>
+
+    </form>
+  </div>
+  <div class="col-md-1"></div>
+</div>
