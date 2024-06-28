@@ -7,7 +7,8 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class ApiService {
      
-  serverUrl='http://localhost:3000'
+  // serverUrl='http://localhost:3000'
+  serverUrl='https://employee-portal-backend-6poa.onrender.com'
 
 //1)create bevaiorsubject
 sharedata= new BehaviorSubject(false)
